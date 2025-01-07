@@ -82,9 +82,14 @@
 	<script>
 		function onUlClick(e) {
 			var el = e.target
-			if (el && el.tagName == 'BUTTON') {
-				//console.log(el.nextElementSibling.tagName)
-				toggle(el.nextElementSibling)
+			//console.log(el.tagName)
+			if (el) {
+				if (el.tagName == 'BUTTON') {
+					toggle(el.nextElementSibling)
+				}
+				else if (el.parentElement.tagName == 'BUTTON') {
+					toggle(el.parentElement.nextElementSibling)
+				}
 			}
 		}
 		function toggle(el) {
