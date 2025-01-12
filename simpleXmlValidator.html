@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Simple Xml Validator</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://w3.p2hp.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="w3-auto">
+	<div class="w3-bar w3-border w3-small">
+	  <a href="index.html" class="w3-bar-item w3-button">Xsd Explorer Home</a>
+	  <a href="#" class="w3-bar-item w3-button w3-light-gray">Simple Xml Validator</a>
+	</div>		
+	<div class="w3-container w3-sand">
+		<h1>Simple Xml Validator</h1>
+		<p>Xsd and Xml Validator</p>
+	</div>
+	<div class="w3-container">
+		<p>Freeware lightweight XML Schema validation utility with the following features:</p>
+		<ul class="w3-ul" onclick="onUlClick(event)">
+			<li><button class="w3-button w3-block w3-left-align w3-large">Check if schema is valid <i class="fa fa-caret-down"></i></button>
+				<div class="w3-hide  w3-panel w3-card">Click "Browse" or use drag & drop to open xsd file. Validation will be performed with 
+					errors reported in the log view.<br><a href="https://xerces.apache.org/xerces-c/">Apache Xerces-C++</a> is used for validation</div>
+			</li>
+			<li><button class="w3-button w3-block w3-left-align w3-large">Validate xml files <i	class="fa fa-caret-down"></i></button>
+				<div class="w3-hide w3-panel w3-card">Once xsd schema is loaded, click "Browse" again to select xml file for validation against schema loaded.<br>
+				Note: you can select xml without selecting xsd first, if it contains proper schema reference (schemaLocation attribute).<br>
+				Validation is fully streaming and xml files of any size can be used.
+				</div>
+			</li>
+		</ul>
+		<img class="w3-padding-24" src="simpleXmlValidator.png" alt="screenshot">
+		
+		<h2>Advantages over online validators:</h2>
+		<ul>
+			<li>Multi-file schema documents can be used</li>
+			<li>Can validate files of any size: using SAX parser which is using streaming to process huge xml documents with low memory footprint</li>
+			<li>Can validate XSD schema itself (without XML)</li>
+		<ul>
+	</div>
+
+
+	<div class="w3-container">
+		<h2>Download for Windows x64:</h2>
+		<p>Latest version 1.0.0 <a
+				href="https://drive.google.com/file/d/1Y3vlFI72MYKKTyOneWbsVPBouRRaHNmq/view?usp=drive_link">SimpleXmlValidator.zip</a>
+			745K - Portable version, extract to any directory and start via SimpleXmlValidator.exe</p>
+		<p>Note: requires Microsoft Visual C++ redistributables, usually already installed. If you get startup error, install from this <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe">link</a></p>
+	</div>
+
+	<div class="w3-container w3-sand w3-padding-24">
+		Copyright © 2025 XsdExplorer <a href="" onclick="sendEmail()">Contact the author</a>
+	</div>
+
+	<script>
+		function onUlClick(e) {
+			var el = e.target
+			//console.log(el.tagName)
+			if (el) {
+				if (el.tagName == 'BUTTON') {
+					toggle(el.nextElementSibling)
+				}
+				else if (el.parentElement.tagName == 'BUTTON') {
+					toggle(el.parentElement.nextElementSibling)
+				}
+			}
+		}
+		function toggle(el) {
+			//var el = document.getElementById(id)
+			if (el.className.indexOf("w3-show") == -1) {
+				el.className += " w3-show";
+			} else {
+				el.className = el.className.replace(" w3-show", "");
+			}
+		}
+		function sendEmail() {
+			var t1 = 'tadamovsky'
+			var t2 = '@g'
+			var t3 = 'mail.com'
+			window.location.href = 'mailto:' + t1 + t2 + t3;
+		}
+	</script>
+</body>
+
+</html>
