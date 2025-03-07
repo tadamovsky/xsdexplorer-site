@@ -21,24 +21,8 @@
 	<div class="w3-container">
 		<p>Freeware XML Schema utility with the following features:</p>
 		<ul class="w3-ul" onclick="onUlClick(event)">
-			<li><button class="w3-button w3-block w3-left-align w3-large">Check if schema is valid <i class="fa fa-caret-down"></i></button>
-				<div class="w3-hide  w3-panel w3-card">Validation is performed on opening the schema, with all
-					errors reported. Java Xerces2 is used for validation.<br>
-					Xerces2 provides fully conforming XML Schema 1.0 and 1.1 processors.<br>
-					For version 1.1, vc:minVersion attribute must be set on the schema.</div>
-			</li>
-			<li><button class="w3-button w3-block w3-left-align w3-large">Detect root element <i class="fa fa-caret-down"></i></button>
-				<div class="w3-hide w3-panel w3-card">In case there are many global elements, detect best root
-					candidate - element that is not referenced by others.<br>
-					Root element is automatically selected in the schema view.</div>
-			</li>
 			<li><button class="w3-button w3-block w3-left-align w3-large">
-					Open schema directly from directory or zip file <i class="fa fa-caret-down"></i></button>
-				<div class="w3-hide w3-panel w3-card">Root schema document(s) are automatically detected and
-					specified in the log bar</div>
-			</li>
-			<li><button class="w3-button w3-block w3-left-align w3-large">
-					Xsd visualization - show XMLSpy like view of schema structure <i class="fa fa-caret-down"></i></button>
+				Xsd visualization - show XMLSpy like view of schema structure <i class="fa fa-caret-down"></i></button>
 				<div class="w3-hide w3-panel w3-card">Xsd view diagram follows XMLSpy conventions: <a href="https://www.altova.com/manual/XMLSpy/spyenterprise/xseditingviews_schview_cmview_objects.html
 			">XMLSpy documentation</a>.<br>Some known differences:
 					<ul>
@@ -48,9 +32,30 @@
 					</ul>
 				</div>
 			</li>
+			<li><button class="w3-button w3-block w3-left-align w3-large">Quickly explore schema definitions <i class="fa fa-caret-down"></i></button>
+				<div class="w3-hide w3-panel w3-card">Search definitions by name or select from tree view (organized by namespace).<br>
+					Use 'backspace' to go to previous definition.</div>
+			</li>
+			<li><button class="w3-button w3-block w3-left-align w3-large">Detect root element <i class="fa fa-caret-down"></i></button>
+				<div class="w3-hide w3-panel w3-card">In case there are many global elements, detect best root
+					candidate - element that is not referenced by others.<br>
+					Root element is automatically selected in the schema view.</div>
+			</li>
+			<li><button class="w3-button w3-block w3-left-align w3-large">
+					Open schema directly from directory or zip file <i class="fa fa-caret-down"></i></button>
+				<div class="w3-hide w3-panel w3-card">Multiple xsd files can reference each other, with this feature schema is loaded from all files at once. 
+					Root schema document(s) are automatically detected and
+					specified in the log bar</div>
+			</li>
 			<li class="w3-hover-gray">
 				<div class="w3-container w3-left-align w3-large">
 					Generate sample from schema</div>
+			</li>
+			<li><button class="w3-button w3-block w3-left-align w3-large">Check if schema is valid <i class="fa fa-caret-down"></i></button>
+				<div class="w3-hide  w3-panel w3-card">Validation is performed on opening the schema, with all
+					errors reported. Java Xerces2 is used for validation.<br>
+					Xerces2 provides fully conforming XML Schema 1.0 and 1.1 processors.<br>
+					For version 1.1, vc:minVersion attribute must be set on the schema.</div>
 			</li>
 			<li><button class="w3-button w3-block w3-left-align w3-large">Validate xml files <i	class="fa fa-caret-down"></i></button>
 				<div class="w3-hide w3-panel w3-card">Once xsd schema is opened, you can drag & drop multiple
@@ -70,7 +75,7 @@
 
 	<div class="w3-container">
 		<h2>Download for Windows x64:</h2>
-		<p>Latest version 1.0.0 <a
+		<p>Latest version 1.0.1 <a
 				href="https://drive.google.com/file/d/1Y3vlFI72MYKKTyOneWbsVPBouRRaHNmq/view?usp=drive_link">xsdExplorer.zip</a>
 			42.4MB - Portable version, extract to any directory and start via XsdExplorer.exe</p>
 		<h3>For Linux users or advanced users that want to use their own JDK:</h3>
