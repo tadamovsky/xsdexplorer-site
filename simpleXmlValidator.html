@@ -62,7 +62,7 @@
 	</div>
 
 	<div class="w3-container w3-sand w3-padding-24">
-		Copyright © 2025 XsdExplorer <a href="" onclick="sendEmail()">Contact the author</a>
+		Copyright © 2025 XsdExplorer <a id="emailLink" href="" onclick="sendEmail()">Contact the author</a>
 	</div>
 
 	<script>
@@ -86,11 +86,21 @@
 				el.className = el.className.replace(" w3-show", "");
 			}
 		}
+		
 		function sendEmail() {
+			window.location.href = 'mailto:' + getEmail();
+		}
+		
+		function getEmail() {
 			var t1 = 'tadamovsky'
 			var t2 = '@g'
 			var t3 = 'mail.com'
-			window.location.href = 'mailto:' + t1 + t2 + t3;
+			return t1 + t2 + t3;
+		}
+		
+		var linkElement = document.getElementById('emailLink');
+		if (linkElement) {
+			linkElement.textContent = getEmail();
 		}
 	</script>
 </body>
